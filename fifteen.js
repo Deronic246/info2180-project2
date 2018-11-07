@@ -33,4 +33,31 @@ window.onload = function(){
 			pieces[index].style.backgroundImage = "url(Elektra.jpg)";
         }
     }
-   
+    //creates drop-down menu of images
+    for(var index=0;index<options.length;index++){
+        var option = document.createElement("option");
+        option.text = options[index];
+        select.add(option);
+    }
+    div_control.appendChild(select);
+    change_image.innerHTML = "Change Image";
+    div_control.appendChild(change_image);
+
+    change_image.addEventListener("click",function(){
+		for(var index=0;index<pieces.length;index++){
+			var choice = select.options[select.selectedIndex];
+    
+            if(choice.text === "Punisher"){
+                pieces[index].style.backgroundImage = "url(background.jpg)";
+            }
+            if(choice.text === "Daredevil"){
+                pieces[index].style.backgroundImage = "url(Daredevil.jpg)";
+            }
+            if(choice.text === "Elektra"){
+                pieces[index].style.backgroundImage = "url(Elektra.jpg)";
+            }
+		}
+	});
+
+
+	
