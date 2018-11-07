@@ -129,4 +129,36 @@ window.onload = function(){
  				shufflePiece.style.left = eLeft + "px";
 				emptyTop = oldTop;
  				eLeft = oldLeft;
- 			
+ 			}
+			else if ( choice == 1) {
+ 				(getStyle(emptyTop+"px", (eLeft-100)+"px")) || getStyle(emptyTop+"px", (eLeft + 100)+"px");
+				oldTop = parseInt(shufflePiece.style.top);
+				oldLeft = parseInt(shufflePiece.style.left);
+				shufflePiece.style.top = emptyTop + "px";
+				shufflePiece.style.left = eLeft + "px";
+				emptyTop = oldTop;
+				eLeft = oldLeft;
+			}
+			else if ( choice == 2) {
+				getStyle((emptyTop+100)+"px", eLeft+"px") || (getStyle((emptyTop-100)+"px", eLeft+"px"));
+				oldTop = parseInt(shufflePiece.style.top);
+				oldLeft = parseInt(shufflePiece.style.left);
+				shufflePiece.style.top = emptyTop + "px";
+				shufflePiece.style.left = eLeft + "px";
+				emptyTop = oldTop;
+				eLeft = oldLeft;
+			}
+ 			else {
+				getStyle(emptyTop+"px", (eLeft + 100)+"px") || (getStyle(emptyTop+"px", (eLeft-100)+"px"));
+				oldTop = parseInt(shufflePiece.style.top);
+				oldLeft = parseInt(shufflePiece.style.left);
+				shufflePiece.style.top = emptyTop + "px";
+				shufflePiece.style.left = eLeft + "px";
+				emptyTop = oldTop;
+				eLeft = oldLeft;
+			}
+		}	
+	}
+
+	div_control.onclick = Shuffle; 
+}
